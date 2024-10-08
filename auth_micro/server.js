@@ -1,16 +1,21 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const colors = require('colors');
+import express from "express";
+
+import colors from "colors";
+
+import dotenv from "dotenv";
 
 dotenv.config();
-const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.get('/', (req, res) => { 
-    res.send('Hello from Express.js!');
+app.use(express.json());
+
+const PORT = process.env.PORT || 8000;
+
+app.get('/', (req, res) => {
+    return res.json({ message: 'Hello from Express.js!' });
 });
 
-app.listen(PORT,()=>{
-    console.log(`Server is running at ${PORT}`.bgBlue);
-})
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`.bgBlue);
+});
