@@ -2,6 +2,7 @@
   "name": "auth_micro",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -16,5 +17,8 @@
     "express": "^4.21.0",
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "prisma": "^5.20.0"
   }
 }
